@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'pages.apps.PagesConfig', 
+    'pages.apps.PagesConfig',
+    'projects.apps.ProjectsConfig', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,9 @@ ROOT_URLCONF = 'personal_converter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates/", # Added to let the app know that home.html exsists. Also this is the bootstrap
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
